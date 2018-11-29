@@ -1,5 +1,5 @@
 # BaseUtils
- mvp 
- tcp:Socket
- Zxing: 二维码生成
- http：封装okgo
+ mvp <br>
+ tcp:Socket <br>
+ Zxing: 二维码生成 <br>
+ http：封装okgo  <br>
