@@ -12,21 +12,22 @@ import com.lzy.okgo.model.Response;
 import com.lzy.okgo.request.base.Request;
 
 /**
- *
  * @author babieta
  * @date 2018/11/29
  */
 
-public abstract class BaseHttp {
+public class BaseHttp {
 
     public HttpParams mCommonParams;
     public String url;
+    public  IhttpCallBack ihttpCallBack;
     private Context context;
 
     public BaseHttp(Context context) {
         this.context = context;
     }
 
+    public void  setUrL(){}
 
     public void get() {
         OkGo.<String>get(url).params(mCommonParams).execute(stringCallback);
@@ -37,14 +38,20 @@ public abstract class BaseHttp {
     }
 
     private void callOnSuccess(JSONObject jsonObject) {
-        BaseHttp.this.onSuccess(jsonObject);
+//        BaseHttp.this.onSuccess(jsonObject);
+        BaseHttp.this.ihttpCallBack.onSuccess(jsonObject);
     }
 
     private void callOnFailure(String message) {
-        BaseHttp.this.onFailure(message);
+//        BaseHttp.this.onFailure(message);
+        BaseHttp.this.ihttpCallBack.onFailure(message);
     }
 
-    public abstract void onSuccess(JSONObject jsonObject);
+
+
+    public void onSuccess(JSONObject jsonObject) {
+
+    }
 
     public void onFailure(String message) {
     }
@@ -76,7 +83,7 @@ public abstract class BaseHttp {
         @Override
         public void onError(Response<String> response) {
             super.onError(response);
-            BaseHttp.this.onFailure(response.message() + response.code());
+            BaseHttp.this.callOnFailure(response.message() + response.code());
             Log.e("TAG", "base http onError " + response.message() + response.code());
         }
 
