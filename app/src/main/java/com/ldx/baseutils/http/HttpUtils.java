@@ -17,7 +17,7 @@ public class HttpUtils {
 //        if (!NetworkUtils.isAvailable(context)) {
 //            return;
 //        }
-        HttpRequest httpRequest = new HttpRequest(context) {
+        BaseHttp httpRequest = new BaseHttp(context) {
             @Override
             public void onSuccess(JSONObject jsonObject) {
                 callback.onSuccess(jsonObject);
