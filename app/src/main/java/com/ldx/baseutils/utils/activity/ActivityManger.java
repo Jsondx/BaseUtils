@@ -1,4 +1,4 @@
-package com.ldx.baseutils.utils;
+package com.ldx.baseutils.utils.activity;
 
 import android.app.Activity;
 

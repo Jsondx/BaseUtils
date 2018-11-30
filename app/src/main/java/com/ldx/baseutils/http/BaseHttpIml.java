@@ -5,7 +5,6 @@ import android.content.Context;
 import com.lzy.okgo.model.HttpParams;
 
 /**
- *
  * @author babieta
  * @date 2018/11/30
  */
@@ -36,8 +35,7 @@ public class BaseHttpIml extends BaseHttp implements IHttpInterface {
         private BaseHttp baseHttp;
 
         public Builder(Context context) {
-//            mHttp = new BaseHttpController();
-            new BaseHttp(context);
+            baseHttp = new BaseHttp(context);
         }
 
         public Builder setUrl(String thisurl) {
@@ -54,6 +52,7 @@ public class BaseHttpIml extends BaseHttp implements IHttpInterface {
             baseHttp.ihttpCallBack = stringCallBack;
             return this;
         }
+
 
         public Builder post() {
             post();

@@ -1,6 +1,5 @@
 package com.ldx.baseutils.ui.activity;
 
-import android.app.AlertDialog;
 import android.support.annotation.NonNull;
 
 import com.ldx.baseutils.demo.ConcreteBuilder;

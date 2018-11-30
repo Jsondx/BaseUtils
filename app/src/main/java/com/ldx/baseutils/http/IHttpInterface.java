@@ -1,6 +1,5 @@
 package com.ldx.baseutils.http;
 
-import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.HttpParams;
 
 /**

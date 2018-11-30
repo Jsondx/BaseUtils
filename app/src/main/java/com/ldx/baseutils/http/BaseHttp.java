@@ -27,8 +27,6 @@ public class BaseHttp {
         this.context = context;
     }
 
-    public void  setUrL(){}
-
     public void get() {
         OkGo.<String>get(url).params(mCommonParams).execute(stringCallback);
     }
@@ -38,16 +36,12 @@ public class BaseHttp {
     }
 
     private void callOnSuccess(JSONObject jsonObject) {
-//        BaseHttp.this.onSuccess(jsonObject);
         BaseHttp.this.ihttpCallBack.onSuccess(jsonObject);
     }
 
     private void callOnFailure(String message) {
-//        BaseHttp.this.onFailure(message);
         BaseHttp.this.ihttpCallBack.onFailure(message);
     }
-
-
 
     public void onSuccess(JSONObject jsonObject) {
 
