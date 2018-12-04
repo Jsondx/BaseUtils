@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import com.bailu.hailaile.utils.LogUtils;
+import com.ldx.baseutils.utils.LogUtils;
 import com.xuhao.android.libsocket.impl.exceptions.PurifyException;
 import com.xuhao.android.libsocket.sdk.client.ConnectionInfo;
 import com.xuhao.android.libsocket.sdk.client.connection.AbsReconnectionManager;

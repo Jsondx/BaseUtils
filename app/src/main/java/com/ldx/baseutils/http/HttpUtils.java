@@ -10,14 +10,14 @@ import com.lzy.okgo.model.HttpParams;
  * @date 2018/11/29
  */
 
-public class HttpUtils {
+public  class HttpUtils {
 
-    public static void post(Context context, String url, HttpParams httpParams, final IhttpCallBack callback) {
+    public static void post(Context context, String url, HttpParams httpParams, IhttpCallBack ihttpCallBack) {
 
         BaseHttpIml.Builder builder = new BaseHttpIml.Builder(context)
                 .setUrl(url)
                 .setParams(httpParams)
-                .setStringCallBack(callback);
+                .setStringCallBack(ihttpCallBack);
         builder.post();
 
     }

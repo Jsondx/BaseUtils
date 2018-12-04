@@ -4,6 +4,7 @@ package com.ldx.baseutils.socket;
 import android.content.Context;
 
 import com.ldx.baseutils.utils.LogUtils;
+import com.ldx.baseutils.utils.StringUtils;
 import com.xuhao.android.common.basic.bean.OriginalData;
 import com.xuhao.android.common.interfacies.client.msg.ISendable;
 import com.xuhao.android.libsocket.impl.client.PulseManager;
@@ -57,7 +58,7 @@ public class OkSocketUtils {
         }
         LogUtils.e("  --->  创建连接  ");
         if (option == null) {
-            info = new ConnectionInfo(UriApi.SOCKET_URI, UriApi.PORT_NUMBER);
+//            info = new ConnectionInfo(UriApi.SOCKET_URI, UriApi.PORT_NUMBER);
             //调用OkSocket,开启这次连接的通道,调用通道的连接方法进行连接.
             OkSocketOptions.Builder builder = new OkSocketOptions.Builder();
             builder.setPulseFrequency(18000);

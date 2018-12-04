@@ -55,12 +55,12 @@ public class BaseHttpIml extends BaseHttp implements IHttpInterface {
 
 
         public Builder post() {
-            post();
+            baseHttp.post();
             return this;
         }
 
         public Builder get() {
-            get();
+            baseHttp.get();
             return this;
         }
     }
