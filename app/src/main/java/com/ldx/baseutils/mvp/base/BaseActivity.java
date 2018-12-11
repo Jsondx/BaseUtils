@@ -12,8 +12,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ldx.baseutils.R;
 import com.ldx.baseutils.callBack.PermissionListener;
 import com.ldx.baseutils.utils.activity.ActivityManger;
 import com.ldx.baseutils.utils.activity.ActivityUtils;

@@ -11,14 +11,12 @@ import com.lzy.okgo.model.HttpParams;
 
 public class BaseHttpIml extends BaseHttp implements IHttpInterface {
 
-    public BaseHttpIml(Context context) {
-        super(context);
+    public BaseHttpIml() {
     }
 
     @Override
     public void setUrl(String thisurl) {
         url = thisurl;
-
     }
 
     @Override
@@ -35,7 +33,7 @@ public class BaseHttpIml extends BaseHttp implements IHttpInterface {
         private BaseHttp baseHttp;
 
         public Builder(Context context) {
-            baseHttp = new BaseHttp(context);
+            baseHttp = new BaseHttp();
         }
 
         public Builder setUrl(String thisurl) {
@@ -54,12 +52,12 @@ public class BaseHttpIml extends BaseHttp implements IHttpInterface {
         }
 
 
-        public Builder post() {
+        public Builder builderPost() {
             baseHttp.post();
             return this;
         }
 
-        public Builder get() {
+        public Builder builderGet() {
             baseHttp.get();
             return this;
         }

@@ -28,6 +28,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.lzy.net:okgo:3.0.4'
     implementation 'com.alibaba:fastjson:1.2.33'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.lovedise:permissiongen:0.0.6'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.github.bumptech.glide:glide:4.4.0' //添加支持
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
+
     implementation project(':SocketLib')
     implementation project(':ZXinglib')
 }

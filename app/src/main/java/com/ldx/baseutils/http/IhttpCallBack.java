@@ -7,13 +7,13 @@ import com.alibaba.fastjson.JSONObject;
  * @date 2016/11/25
  */
 
-public interface IhttpCallBack<T> {
+public interface IhttpCallBack{
     /**
      * 成功
      *
      * @param jsonObject
      */
-    void onSuccess(JSONObject jsonObject, T t);
+    void onSuccess(JSONObject jsonObject);
 
     /**
      * error信息

@@ -20,13 +20,11 @@ import okhttp3.OkHttpClient;
  */
 
 public class MyApplication extends Application {
-    public static Context appContext;
     private static Application instance;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        appContext = getApplicationContext();
         if (instance == null) {
             instance = this;
         }

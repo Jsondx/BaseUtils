@@ -16,4 +16,22 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowIsFloating">true</item>
     </style>
+
+    <declare-styleable name="HighlightButtonStyle">
+        <attr name="highlight_button_img_id" format="reference" />
+        <attr name="highlight_button_height_self_adaption" format="boolean" />
+        <attr name="highlight_button_width_self_adaption" format="boolean" />
+        <attr name="highlight_button_max_animation_ratio" format="float" />
+        <attr name="highlight_button_outline_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialLayout">
+        <!--<attr name="alpha" format="integer" />-->
+        <attr name="alpha_step" format="integer" />
+        <attr name="framerate" format="integer" />
+        <attr name="duration" format="integer" />
+        <attr name="mycolor" format="color" />
+        <attr name="scale" format="float" />
+    </declare-styleable>
+
 </resources>
