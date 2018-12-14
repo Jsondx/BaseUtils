@@ -10,54 +10,11 @@
 
     <include layout="@layout/ac_base" />
 
-    <Button
+    <EditText
+        android:id="@+id/textI"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onSendCode"
-        android:text="发送验证码" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="geJson"
-        android:text="获取json" />
-
-
-    <com.ldx.baseutils.view.GrayScaleImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:onClick="onViewChilck"
-        android:scaleType="fitXY"
-        android:src="@drawable/navigation" />
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <com.ldx.baseutils.view.HighlightButton
-            android:id="@+id/button"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerInParent="true"
-            custom:highlight_button_img_id="@drawable/navigation"
-            custom:highlight_button_outline_color="#787878" />
-
-    </LinearLayout>
-
-
-    <com.ldx.baseutils.view.MaterialLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:onClick="onViewChilck"
-            android:scaleType="fitXY"
-            android:src="@drawable/navigation" />
-
-    </com.ldx.baseutils.view.MaterialLayout>
+        android:layout_height="40dp"
+         />
 
 
 </LinearLayout>

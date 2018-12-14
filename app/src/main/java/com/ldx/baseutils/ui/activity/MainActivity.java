@@ -5,21 +5,17 @@ import android.content.ContentResolver;
 import android.database.Cursor;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
-import com.ldx.baseutils.demo.ConcreteBuilder;
-import com.ldx.baseutils.demo.Director;
-import com.ldx.baseutils.https.Http;
-import com.ldx.baseutils.https.BaseCallBack;
 import com.ldx.baseutils.mvp.base.BaseActivity;
 import com.ldx.baseutils.R;
 import com.ldx.baseutils.mvp.presenter.MainPresenter;
 import com.ldx.baseutils.mvp.view.MainView;
-import com.ldx.baseutils.ui.bean.Code;
 import com.ldx.baseutils.ui.bean.ContactInfo;
 import com.ldx.baseutils.utils.LogUtils;
-import com.lzy.okgo.model.HttpParams;
-import com.lzy.okgo.model.Response;
+import com.ldx.baseutils.utils.WordUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +28,7 @@ import kr.co.namee.permissiongen.PermissionSuccess;
  * @author babieta
  */
 public class MainActivity extends BaseActivity<MainPresenter> implements MainView {
-
+    private boolean flag = false;
 
     @Override
     protected MainPresenter createP() {
@@ -47,10 +43,42 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     @Override
     protected void initView() {
-        ConcreteBuilder concreteBuilder = new ConcreteBuilder();
-        Director director = new Director(concreteBuilder);
-        director.Construct("i7-6700", "三星DDR4", "希捷1T");
 
+        final EditText text = findViewById(R.id.textI);
+
+        text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    String inputString = "" + text.getText().toString();
+                    String firstLetterCapString = WordUtil.capitalize(inputString);
+                    if (!firstLetterCapString.equals("" + text.getText().toString())) {
+                        text.setText("" + firstLetterCapString);
+                        text.setSelection(text.getText().length());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+    }
+
+    private String firstLetterToBig(String str) {
+        if (str.isEmpty()) {
+            return "";
+        }
+        return str.substring(0, 1).toUpperCase() + str.substring(1, str.length());
     }
 
     @Override
@@ -58,29 +86,11 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     }
 
-    public void geJson(View view) {
-        HttpParams httpParams = new HttpParams();
-        httpParams.put("phone", "15064875827");
-        Http.post("http://testing,lailezhuanche.com/home/Register/sendCode", httpParams, new BaseCallBack<Code>() {
-            @Override
-            public void onSuccess(Response<Code> response) {
-                Code body = response.body();
-
-
-            }
-        });
-
-    }
-
-    public void onSendCode(View view) {
+    public void requestPermission() {
         PermissionGen.with(MainActivity.this)
                 .addRequestCode(100)
                 .permissions(Manifest.permission.READ_CONTACTS)
                 .request();
-    }
-
-    public void onViewChilck(View view) {
-
     }
 
     @PermissionSuccess(requestCode = 100)
