@@ -2,6 +2,7 @@ package com.ldx.baseutils;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -21,6 +22,13 @@ import okhttp3.OkHttpClient;
 
 public class MyApplication extends Application {
     private static Application instance;
+
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(base);
+    }
 
     @Override
     public void onCreate() {

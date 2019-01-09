@@ -50,4 +50,33 @@ public class WordUtil {
             return false;
         }
     }
+    /** firstname.addTextChangedListener(new TextWatcher() {
+    @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+    if (StringUtils.isEmpty(firstname.getText().toString().trim())) {
+    firstnameTitle.setTextColor(getResources().getColor(R.color.text_red));
+    } else {
+    firstnameTitle.setTextColor(getResources().getColor(R.color.text_normal));
+    }
+    try {
+    String inputString = "" + firstname.getText().toString();
+    String firstLetterCapString = WordUtil.capitalize(inputString);
+    if (!firstLetterCapString.equals("" + firstname.getText().toString())) {
+    firstname.setText("" + firstLetterCapString);
+    firstname.setSelection(firstname.getText().length());
+    }
+    } catch (Exception e) {
+    e.printStackTrace();
+    }
+
+    }
+
+    @Override public void afterTextChanged(Editable s) {
+
+    }
+    });**/
+
 }

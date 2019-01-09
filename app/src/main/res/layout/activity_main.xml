@@ -5,16 +5,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="com.ldx.baseutils.ui.activity.MainActivity">
 
     <include layout="@layout/ac_base" />
 
-    <EditText
-        android:id="@+id/textI"
+
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-         />
+        android:layout_height="wrap_content"
+        android:onClick="requestPermission"
+        android:text="展示通知栏" />
+
+    <com.ldx.baseutils.view.SlideRightViewDragHelper
+        android:id="@+id/SlideRightViewDragHelper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2bc1b7">
+
+        <LinearLayout
+            android:id="@+id/get_order_ll_slide"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#119b5f">
+
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="滑动"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </com.ldx.baseutils.view.SlideRightViewDragHelper>
+
+
+    <Button
+        android:id="@+id/btn_sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="初始化sp" />
+
+    <Button
+        android:id="@+id/btn_sp_clean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清除sp" />
+    <TextView
+        android:text="我的天啊 好多问题"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
 
 
 </LinearLayout>

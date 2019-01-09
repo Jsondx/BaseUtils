@@ -7,8 +7,8 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 
-import com.ldx.baseutils.mvp.base.BaseDilaog;
 import com.ldx.baseutils.R;
+import com.ldx.baseutils.mvp.base.BaseDilaog;
 
 
 /**

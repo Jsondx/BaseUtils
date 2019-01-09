@@ -3,7 +3,6 @@ package com.ldx.baseutils.https;
 import com.google.gson.Gson;
 import com.lzy.okgo.callback.AbsCallback;
 
-
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 

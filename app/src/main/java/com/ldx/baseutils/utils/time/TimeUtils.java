@@ -2,7 +2,6 @@ package com.ldx.baseutils.utils.time;
 
 import android.os.Handler;
 
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
